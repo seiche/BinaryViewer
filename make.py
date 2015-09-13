@@ -19,3 +19,4 @@ for root, dirs, files in os.walk("."):
         zipf.write(os.path.join(root, file))
 
 zipf.close()
+os.system("nw app.nw")
