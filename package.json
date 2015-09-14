@@ -7,8 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "window" :{
-    "toolbar" : false,
-    "width" : 800,
+    "toolbar" : true,
+    "width" : 840,
     "height" : 500
   },
   "repository": {

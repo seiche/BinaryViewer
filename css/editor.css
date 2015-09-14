@@ -1,3 +1,6 @@
+/**************************************************************
+ * Global Definitions                                         *
+ **************************************************************/
 
 html, body{
   height: 100%;
@@ -5,9 +8,13 @@ html, body{
   margin : 0;
 }
 
-body{
-  background: #eee;
+input[type="file"]{
+  display: none;
 }
+
+/**************************************************************
+ * Header Definitions                                         *
+ **************************************************************/
 
 header{
   height: 40px;
@@ -22,6 +29,23 @@ header table{
   table-layout: fixed;
 }
 
+header table img{
+  width: 16px;
+  display: block;
+  float: left;
+}
+
+header table span{
+  cursor : pointer;
+  display: block;
+  margin: auto;
+  margin-left: 10px;
+}
+
+header table td:last-child{
+  width: 150px;
+}
+
 section{
   height: calc(100% - 40px);
   background: pink;
@@ -29,12 +53,16 @@ section{
   position: relative;
 }
 
+/**************************************************************
+ * Section Defitions                                          *
+ **************************************************************/
+
 section article{
   position: absolute;
   left: 0;
   height: 100%;
   width: calc(100% - 300px);
-  background: #efefef;
+  background: #f3f3f3;
 }
 
 section article div.tabs{
@@ -67,6 +95,14 @@ section article div.body div.offset{
   min-height: 100%;
 }
 
+section article div.labels div.offset li,
+section article div.body div.offset li{
+  padding-right: 6px;
+  list-style: none;
+  letter-spacing: 1px;
+  color: #1C31BC;
+}
+
 section article div.labels div.binary,
 section article div.body div.binary{
   width:329px;
@@ -76,11 +112,18 @@ section article div.body div.binary{
   min-height: 100%;
 }
 
+@media all and (max-width: 1120px){
+  section article div.labels div.text,
+  section article div.body div.text{
+    display: none;
+  }
+}
+
 section article div.labels div.text,
 section article div.body div.text{
-  width: calc(100% - 470px);
+  width:340px;
   position: absolute;
-  right: 0px;
+  left: 470px;
   background: yellow;
   min-height: 100%;
 }
@@ -100,10 +143,35 @@ section article ul.line li.q{
   display: inline-block;
 }
 
+/**************************************************************
+ * Sidebar Definitions                                        *
+ **************************************************************/
+
 section aside{
-  width: 300px;
-  background: blue;
+  width: 299px;
+  background: #C1C1C1;
   height: 100%;
   position: absolute;
   right: 0;
+  border-left: 1px solid #aaa;
+}
+
+section aside li.label:first-child{
+  border-top: 1px solid #aaa;
+}
+
+section aside li.label{
+  width: 100%;
+  padding: 4px 0;
+  list-style: none;
+  border-bottom: 1px solid #aaa;
+  background: #E5E5E5;
+  text-indent: 4px;
+  cursor: pointer;
+}
+
+section aside ul.toolkit{
+  padding: 0;
+  margin: 0;
+  height: calc(100% - 109px);
 }

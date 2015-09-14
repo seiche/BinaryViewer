@@ -4,27 +4,53 @@
     <title>Hex Editor</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="css/editor.css"/>
+    <script type="text/javascript" src="js/main.js"></script>
   </head>
   <body>
+    <!-- Header -->
     <header>
-      <table border="1">
+      <table>
         <tr>
-          <td>New</td>
-          <td>Open</td>
-          <td>Save</td>
-          <td>Width</td>
-          <td>Group</td>
-          <td>Encoding</td>
+          <td>
+            <span><img src="img/document-32.png"/>New</span>
+          </td>
+          <td>
+            <span id="btn_open"><img src="img/opened_folder-32.png"/>Open</span>
+            <input id="fileDialog" type="file" />
+          </td>
+          <td>
+            <span><img src="img/ic_action_save.png"/>Save</span>
+          </td>
+          <td>
+            <span><img src="img/print-32.png"/>Print</span>
+          </td>
+          <td>
+            Width <select disabled>
+              <option>16</option>
+            </select>
+          </td>
+          <td>
+            Group <select disabled>
+              <option>4</option>
+            </select>
+          </td>
+          <td>Encoding <select disabled>
+              <option>Ascii</option>
+            </select>
+          </td>
         </tr>
       </table>
     </header>
+
+    <!-- Section -->
     <section>
+      <!-- Hex Display -->
       <article>
         <div class="tabs">
         </div>
         <div class="labels">
           <div class="offset">
-            Offset
+            <li>Offset</li>
           </div>
           <div class="binary">
             <ul class="line">
@@ -45,26 +71,30 @@
         </div>
         <div class="body">
           <div class="offset">
-            <li>0x00000</li>
-            <li>0x00010</li>
-            <li>0x00020</li>
-            <li>0x00030</li>
-            <li>0x00040</li>
-            <li>0x00050</li>
-            <li>0x00060</li>
-            <li>0x00070</li>
-            <li>0x00080</li>
-            <li>0x00090</li>
+            <li>0x000000</li>
+            <li>0x000010</li>
+            <li>0x000020</li>
+            <li>0x000030</li>
+            <li>0x000040</li>
+            <li>0x000050</li>
+            <li>0x000060</li>
+            <li>0x000070</li>
+            <li>0x000080</li>
+            <li>0x000090</li>
           </div>
           <div class="binary">
             <ul class="line">
               <li class="q">
+                89504E47
               </li>
               <li class="q">
+                0D0A1A0A
               </li>
               <li class="q">
+                0000000D
               </li>
               <li class="q">
+                49484452
               </li>
             </ul>
           </div>
@@ -73,7 +103,15 @@
           </div>
         </div>
       </article>
-      <aside></aside>
+
+      <!-- Sidebar -->
+      <aside>
+        <li class="label">Binary Mask</li>
+        <li class="label">Struct def</li>
+        <li class="label">Conversions</li>
+          <ul class="toolkit"></ul>
+        <li class="label">Undo History</li>
+      </aside>
     </section>
   </body>
 </html>
