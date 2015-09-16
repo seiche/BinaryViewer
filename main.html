@@ -12,17 +12,17 @@
       <table>
         <tr>
           <td>
-            <span><img src="img/document-32.png"/>New</span>
+            <span><img src="img/docs_white.png"/>&nbsp;New</span>
           </td>
           <td>
-            <span id="btn_open"><img src="img/opened_folder-32.png"/>Open</span>
+            <span id="btn_open"><img src="img/folder_white.png"/>&nbsp;Open</span>
             <input id="fileDialog" type="file" />
           </td>
           <td>
-            <span><img src="img/ic_action_save.png"/>Save</span>
+            <span><img src="img/save_white.png"/>&nbsp;Save</span>
           </td>
           <td>
-            <span><img src="img/print-32.png"/>Print</span>
+            <span><img src="img/print_white.png"/>&nbsp;Print</span>
           </td>
           <td>
             Width <select disabled>
@@ -47,6 +47,19 @@
       <!-- Hex Display -->
       <article>
         <div class="tabs">
+          <li></li>
+          <li class="active">
+            <table>
+              <tr>
+                <td>Filename.txt</td>
+                <td>
+                  <img src="img/close.png"/>
+                </td>
+              </tr>
+            </table>
+          </li>
+          <li></li>
+          <li></li>
         </div>
         <div class="labels">
           <div class="offset">
@@ -54,23 +67,27 @@
           </div>
           <div class="binary">
             <ul class="line">
-              <li class="q">
+              <table>
+                <tr>
+                <td>
                 0x00
-              </li>
-              <li class="q">
+                </td>
+                <td>
                 0x04
-              </li>
-              <li class="q">
+                </td>
+                <td>
                 0x08
-              </li>
-              <li class="q">
+                </td>
+                <td>
                 0x0C
-              </li>
+                </td>
+              </tr>
+              </table>
             </ul>
           </div>
         </div>
         <div class="body">
-          <div class="offset">
+          <div class="offset" id="offset">
             <li>0x000000</li>
             <li>0x000010</li>
             <li>0x000020</li>
@@ -83,20 +100,7 @@
             <li>0x000090</li>
           </div>
           <div class="binary" id="viewer">
-            <ul class="line">
-              <li class="q">
-                89504E47
-              </li>
-              <li class="q">
-                0D0A1A0A
-              </li>
-              <li class="q">
-                0000000D
-              </li>
-              <li class="q">
-                49484452
-              </li>
-            </ul>
+
           </div>
           <div class="text">
 
@@ -107,10 +111,13 @@
       <!-- Sidebar -->
       <aside>
         <li class="label">Binary Mask</li>
+          <ul class="toolkit"></ul>
         <li class="label">Struct def</li>
+          <ul class="toolkit"></ul>
         <li class="label">Conversions</li>
           <ul class="toolkit"></ul>
         <li class="label">Undo History</li>
+          <ul class="toolkit"></ul>
       </aside>
     </section>
   </body>
