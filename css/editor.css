@@ -45,7 +45,16 @@ header table span{
   margin-left: 10px;
 }
 
-header table td:last-child{
+header table td:nth-child(1),
+header table td:nth-child(2),
+header table td:nth-child(3),
+header table td:nth-child(4){
+  width: 100px;
+}
+
+header table td:nth-child(6),
+header table td:nth-child(7),
+header table td:nth-child(8){
   width: 150px;
 }
 
@@ -143,7 +152,7 @@ section article div.body div.offset{
   width: 139px;
   position: absolute;
   left: 0;
-  border-right: 1px solid #ccc;
+  //border-right: 1px solid #ccc;
   text-align: right;
   min-height: 100%;
 }
@@ -162,14 +171,19 @@ section article div.body div.binary{
   width:389px;
   position: absolute;
   left: 140px;
-  border-right: 1px solid #ccc;
+  //border-right: 1px solid #ccc;
   min-height: 100%;
   letter-spacing: 1px;
 }
 
-section article div.body div.offset li,
+section article div.body div.offset li{
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
 section article div.body div.binary li{
-  padding: 2px 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 @media all and (max-width: 1320px){
@@ -188,16 +202,16 @@ section article div.body div.text{
   min-height: 100%;
 }
 
-section article ul.line{
+section article div.labels div.binary li,
+section article div.body div.binary li{
   width: 100%;
   list-style: none;
   display: block;
   white-space: nowrap;
-  padding: 0;
-  margin: 0;
 }
 
-section article ul.line table{
+section article div.labels div.binary li table,
+section article div.body div.binary li table{
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
@@ -235,4 +249,5 @@ section aside ul.toolkit{
   margin: 0;
   height: calc(100% - 149px);
   max-height: 0;
+  overflow-y: auto;
 }

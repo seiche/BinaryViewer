@@ -1,76 +1,110 @@
 document.addEventListener("DOMContentLoaded", main);
 
-function main(){
-  var btns = {};
-  btns.open = document.getElementById("btn_open");
+var ui = {};
 
-  btns.open.addEventListener("click", file_select);
+function main(){
+  //get elements
+  var header = {
+    open : document.getElementById("btn_open")
+  };
+
+  var toolkit = {
+    active : 1,
+    elements : {
+      labels : [
+        document.getElementById("tk_lb0"),
+        document.getElementById("tk_lb1"),
+        document.getElementById("tk_lb2"),
+        document.getElementById("tk_lb3")
+      ],
+      areas : [
+        document.getElementById("tk0"),
+        document.getElementById("tk1"),
+        document.getElementById("tk2"),
+        document.getElementById("tk3")
+      ]
+    }
+  };
+
+  //append to global ui object
+  ui.toolkit = toolkit;
+
+  //add events
+  header.open.addEventListener("click", file_select);
+
+  for(var i = 0; i < toolkit.elements.labels.length; i++){
+    toolkit.elements.labels[i].addEventListener("click", open_toolkit);
+  }
 }
 
 function file_select(){
   var chooser = document.getElementById("fileDialog");
-  chooser.addEventListener("change", function(evt) {
+  chooser.addEventListener("change", display_hexidecial);
+  chooser.click();
+
+  function display_hexidecial(evt){
     var file = evt.target.files[0];
     var reader = new FileReader();
     reader.readAsArrayBuffer(file);
-    var div = document.getElementById("viewer");
-    var offdiv = document.getElementById("offset");
-    div.innerHTML = "";
-    offdiv.innerHTML = "";
+
     reader.onload = function(){
       var buffer = this.result;
-      var arr = new Uint8Array(buffer);
-      var byte, ul, li;
-      var space = 0;
-      var line = 0;
-      var array = [];
-      var file = [];
-      var str = "";
+      var array = new Uint8Array(buffer);
 
-      for(var i = 0; i < arr.length; i++){
-        byte = arr[i].toString(16);
+      var byte;
+      var num = 0;
+      var digit;
+      var offset = "";
+      var binary = "";
+
+      for(var i = 0; i < array.length; i++){
+        byte = array[i].toString(16);
         if(byte.length < 2) byte = "0" + byte;
-        if(space == 4){
-          space = 0;
-          line++;
-          array.push(str);
-          str = "";
+
+        if(num == 0){
+          binary += "<li><table><tr><td>";
+          digit = i.toString(16);
+          while(digit.length < 6){
+            digit = "0" + digit;
+          }
+          offset += "<li>0x" + digit + "</li>";
         }
 
-        if(line == 4){
-          line = 0;
-          file.push(array);
-          array = [];
+        binary += byte;
+
+        if(num == 3 || num == 7 || num == 11){
+          binary += "</td><td>";
         }
 
-        str += byte;
-        space++;
+        num++;
+
+        if(num == 16){
+          num = 0;
+          binary += "</td></tr></table></li>";
+        }
+
       }
-
-      for(var i = 0; i < file.length; i++){
-        var ul = document.createElement("ul");
-        ul.setAttribute("class", "line");
-        var tb = document.createElement("table");
-        ul.appendChild(tb);
-        var row = tb.insertRow(-1);
-        var offnum = (i * 16).toString(16);
-        while(offnum.length < 6){
-          offnum = "0" + offnum;
-        }
-        offnum = "0x" + offnum;
-        var line = document.createElement("li");
-        line.textContent = offnum;
-        offdiv.appendChild(line);
-
-        for(var k = 0; k < file[i].length; k++){
-          var cell = row.insertCell(-1);
-          cell.textContent = file[i][k];
-        }
-
-        div.appendChild(ul);
-      }
+      console.log(binary);
+      document.getElementById("viewer").innerHTML = binary;
+      document.getElementById("offset").innerHTML = offset;
     }
-  });
+  }
 
-  chooser.click();
+}
+
+function open_toolkit(){
+  if(ui.toolkit.animate){
+    return;
+  }
+
+  var id = this.getAttribute("data-id");
+  id = parseInt(id);
+
+  if(ui.toolkit.active === id){
+    return;
+  }
+
+  ui.toolkit.elements.areas[ui.toolkit.active].style.maxHeight = 0;
+  ui.toolkit.active = id;
+  ui.toolkit.elements.areas[ui.toolkit.active].style.maxHeight = "100%";
 }

@@ -24,6 +24,7 @@
           <td>
             <span><img src="img/print_white.png"/>&nbsp;Print</span>
           </td>
+          <td></td>
           <td>
             Width <select disabled>
               <option>16</option>
@@ -66,7 +67,7 @@
             <li>Offset</li>
           </div>
           <div class="binary">
-            <ul class="line">
+            <li>
               <table>
                 <tr>
                 <td>
@@ -83,7 +84,7 @@
                 </td>
               </tr>
               </table>
-            </ul>
+            </li>
           </div>
         </div>
         <div class="body">
@@ -110,14 +111,14 @@
 
       <!-- Sidebar -->
       <aside>
-        <li class="label">Binary Mask</li>
-          <ul class="toolkit"></ul>
-        <li class="label">Struct def</li>
-          <ul class="toolkit"></ul>
-        <li class="label">Conversions</li>
-          <ul class="toolkit"></ul>
-        <li class="label">Undo History</li>
-          <ul class="toolkit"></ul>
+        <li class="label" id="tk_lb0" data-id="0">Binary Mask</li>
+          <ul class="toolkit" id="tk0"></ul>
+        <li class="label" id="tk_lb1"  data-id="1">Struct def</li>
+          <ul class="toolkit"  id="tk1" style="max-height: 100%;"></ul>
+        <li class="label" id="tk_lb2" data-id="2">Conversions</li>
+          <ul class="toolkit"  id="tk2"></ul>
+        <li class="label" id="tk_lb3" data-id="3">Undo History</li>
+          <ul class="toolkit"  id="tk3"></ul>
       </aside>
     </section>
   </body>
