@@ -8,33 +8,8 @@ function main(){
     open : document.getElementById("btn_open")
   };
 
-  var toolkit = {
-    active : 1,
-    elements : {
-      labels : [
-        document.getElementById("tk_lb0"),
-        document.getElementById("tk_lb1"),
-        document.getElementById("tk_lb2"),
-        document.getElementById("tk_lb3")
-      ],
-      areas : [
-        document.getElementById("tk0"),
-        document.getElementById("tk1"),
-        document.getElementById("tk2"),
-        document.getElementById("tk3")
-      ]
-    }
-  };
-
-  //append to global ui object
-  ui.toolkit = toolkit;
-
   //add events
   header.open.addEventListener("click", file_select);
-
-  for(var i = 0; i < toolkit.elements.labels.length; i++){
-    toolkit.elements.labels[i].addEventListener("click", open_toolkit);
-  }
 }
 
 function file_select(){

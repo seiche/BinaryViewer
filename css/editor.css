@@ -73,7 +73,7 @@ section article{
   position: absolute;
   left: 0;
   height: 100%;
-  width: calc(100% - 300px);
+  width: calc(100% - 400px);
   background: #f3f3f3;
   font-family: monospace !important;
   font-size: 16px;
@@ -133,7 +133,7 @@ section article div.tabs li.active{
 }
 
 section article div.labels{
-  width: calc(100% - 320px);
+  width: calc(100% - 400px);
   height: 19px;
   border-bottom: 1px solid #aaa;
   position: fixed;
@@ -143,7 +143,8 @@ section article div.labels{
 
 section article div.body{
   width: 100%;
-  height: 100%;
+  height: calc(100% - 20px);
+  top: 20px;
   overflow-y: scroll;
   position: relative;
   -webkit-transform: translateZ(0);
@@ -160,9 +161,8 @@ section article div.body div.offset{
   width: 139px;
   position: absolute;
   left: 0;
-  top: 20px;
   text-align: right;
-  min-height: calc(100% - 20px);
+  min-height: 100%;
 }
 
 
@@ -190,8 +190,7 @@ section article div.body div.binary{
   position: absolute;
   left: 140px;
   //border-right: 1px solid #ccc;
-  top : 20px;
-  min-height: calc(100% - 20px);
+  min-height: 100%;
   letter-spacing: 1px;
 }
 
@@ -225,8 +224,7 @@ section article div.body div.text{
   position: absolute;
   left: 560px;
   background: #D2E6F7;
-  min-height: calc(100% - 20px);
-  top: 20px;
+  min-height: 100%;
 }
 
 section article div.labels div.binary li,
@@ -249,7 +247,7 @@ section article div.body div.binary li table{
  **************************************************************/
 
 section aside{
-  width: 299px;
+  width: 399px;
   background: #C1C1C1;
   height: 100%;
   position: absolute;
@@ -261,20 +259,25 @@ section aside li.label:first-child{
   border-top: 1px solid #aaa;
 }
 
-section aside li.label{
+section aside li.header{
   width: 100%;
   list-style: none;
   border-bottom: 1px solid #aaa;
   background: #E5E5E5;
   text-indent: 4px;
-  cursor: pointer;
-  height: 36px;
+  height: 19px;
 }
 
-section aside ul.toolkit{
-  padding: 0;
-  margin: 0;
-  height: calc(100% - 149px);
-  max-height: 0;
-  overflow-y: auto;
+section aside div.text{
+  height: calc(100% - 20px);
+  background: #454449;
+}
+
+section aside li.footer{
+  width: 100%;
+  list-style: none;
+  border-top: 1px solid #aaa;
+  background: #E5E5E5;
+  text-indent: 4px;
+  height: 19px;
 }
