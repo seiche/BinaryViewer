@@ -12,17 +12,32 @@ input[type="file"]{
   display: none;
 }
 
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
 /**************************************************************
  * Header Definitions                                         *
  **************************************************************/
 
 header{
   height: 40px;
-  background: #5866CE;
+  background: #487497;
   width: 100%;
   color: #fff;
-  font-size: 18px;
+  font-size: 14px;
   text-shadow: 1px 1px #333;
+  //font-weight: bold;
+  font-family: verdana,arial,helvetica;
+  -webkit-font-smoothing: antialiased;
 }
 
 header table{
@@ -73,7 +88,7 @@ section article{
   position: absolute;
   left: 0;
   height: 100%;
-  width: calc(100% - 400px);
+  width: calc(100% - 500px);
   background: #f3f3f3;
   font-family: monospace !important;
   font-size: 16px;
@@ -133,7 +148,7 @@ section article div.tabs li.active{
 }
 
 section article div.labels{
-  width: calc(100% - 400px);
+  width: 100%;
   height: 19px;
   border-bottom: 1px solid #aaa;
   position: fixed;
@@ -247,7 +262,7 @@ section article div.body div.binary li table{
  **************************************************************/
 
 section aside{
-  width: 399px;
+  width: 499px;
   background: #C1C1C1;
   height: 100%;
   position: absolute;
@@ -263,7 +278,7 @@ section aside li.header{
   width: 100%;
   list-style: none;
   border-bottom: 1px solid #aaa;
-  background: #E5E5E5;
+  background: #fefefe;
   text-indent: 4px;
   height: 19px;
 }
@@ -271,6 +286,16 @@ section aside li.header{
 section aside div.text{
   height: calc(100% - 20px);
   background: #454449;
+}
+
+section aside div.text textarea{
+  width: calc(100% - 2px);
+  min-height: calc(100% - 2px);
+  resize: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
 }
 
 section aside li.footer{
