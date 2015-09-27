@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Hex Editor</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="css/editor.css"/>
+    <script type="text/javascript" src="js/main.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <table>
+        <tr>
+          <td>
+            <span><img src="img/docs_white.png"/>&nbsp;New</span>
+          </td>
+          <td>
+            <span id="btn_open"><img src="img/folder_white.png"/>&nbsp;Open</span>
+            <input id="fileDialog" type="file" />
+          </td>
+          <td>
+            <span><img src="img/save_white.png"/>&nbsp;Save</span>
+          </td>
+          <td>
+            <span><img src="img/print_white.png"/>&nbsp;Print</span>
+          </td>
+          <td></td>
+          <td>
+            Width <select disabled>
+              <option>16</option>
+            </select>
+          </td>
+          <td>
+            Group <select disabled>
+              <option>4</option>
+            </select>
+          </td>
+          <td>Encoding <select disabled>
+              <option>Ascii</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </header>
+
+    <!-- Section -->
+    <section>
+      <!-- Hex Display -->
+      <article>
+        <!--
+        <div class="tabs">
+          <li></li>
+          <li class="active">
+            <table>
+              <tr>
+                <td>Filename.txt</td>
+                <td>
+                  <img src="img/close.png"/>
+                </td>
+              </tr>
+            </table>
+          </li>
+          <li></li>
+          <li></li>
+        </div>
+        -->
+        <div class="labels">
+          <div class="offset">
+            <li>Offset</li>
+          </div>
+          <div class="binary">
+            <li>
+              <table>
+                <tr>
+                <td>
+                0x00
+                </td>
+                <td>
+                0x04
+                </td>
+                <td>
+                0x08
+                </td>
+                <td>
+                0x0C
+                </td>
+              </tr>
+              </table>
+            </li>
+          </div>
+        </div>
+
+        <div class="body">
+          <div class="offset" id="offset">
+            <li>0x000000</li>
+            <li>0x000010</li>
+            <li>0x000020</li>
+            <li>0x000030</li>
+            <li>0x000040</li>
+            <li>0x000050</li>
+            <li>0x000060</li>
+            <li>0x000070</li>
+            <li>0x000080</li>
+            <li>0x000090</li>
+          </div>
+          <div class="binary" id="viewer">
+
+          </div>
+          <div class="text">
+
+          </div>
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside>
+        <li class="header">Struct Def</li>
+        <div class="text">
+          <textarea></textarea>
+        </div>
+      </aside>
+    </section>
+  </body>
+</html>

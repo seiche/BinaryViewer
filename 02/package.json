@@ -1,0 +1,24 @@
+{
+  "name": "binaryviewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "window" :{
+    "toolbar" : false,
+    "width" : 864,
+    "height" : 500
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seiche/BinaryViewer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seiche/BinaryViewer/issues"
+  },
+  "homepage": "https://github.com/seiche/BinaryViewer#readme"
+}
